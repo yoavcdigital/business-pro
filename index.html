@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Pro</title>
+<style>
+  /* RESET & BASIC STYLES */
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Segoe UI', sans-serif; line-height:1.6; color:#333; }
+  a { text-decoration:none; color:inherit; }
+
+  /* HEADER */
+  header { background:#1D4ED8; color:white; padding:20px 0; text-align:center; }
+  header h1 { font-size:2.5rem; }
+  nav a { margin:0 15px; font-weight:600; }
+
+  /* SECTIONS */
+  section { padding:60px 20px; text-align:center; }
+  #services h2, #contact h2 { font-size:2rem; margin-bottom:20px; }
+  .service-card { background:#f4f4f4; padding:20px; margin:15px auto; max-width:400px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+  .service-card h3 { margin-bottom:10px; color:#1D4ED8; }
+
+  /* CHATBOX */
+  .chatbox { position:fixed; bottom:20px; right:20px; width:300px; background:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.2); padding:15px; }
+  .chatbox p { margin-bottom:10px; }
+  .chatbox input { width:70%; padding:5px; border:1px solid #ccc; border-radius:5px; }
+  .chatbox button { padding:6px 10px; background:#1D4ED8; color:white; border:none; border-radius:5px; cursor:pointer; }
+  .chatbox button:hover { background:#2563EB; }
+
+  /* FOOTER */
+  footer { background:#111; color:white; padding:25px 0; text-align:center; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Business Pro</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="service-card">
+    <h3>Web Development</h3>
+    <p>Custom websites that attract clients and look professional.</p>
+  </div>
+  <div class="service-card">
+    <h3>AI Automation</h3>
+    <p>Chatbots and automated tools that save time and boost revenue.</p>
+  </div>
+  <div class="service-card">
+    <h3>Booking & Payments</h3>
+    <p>Online booking forms and payment integration for hassle-free business.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: info@businesspro.com | Phone: 123-456-789</p>
+</section>
+
+<!-- AI CHATBOX -->
+<div class="chatbox">
+  <p><strong>Chat with us!</strong></p>
+  <input type="text" id="userInput" placeholder="Type a question...">
+  <button onclick="chat()">Send</button>
+  <p id="chatResponse"></p>
+</div>
+
+<script>
+// Simple AI-style chatbot logic
+function chat() {
+  const input = document.getElementById('userInput').value.toLowerCase();
+  const response = document.getElementById('chatResponse');
+
+  // Example answers
+  if(input.includes('price')) response.textContent = "Our packages start at $1,000 for a full website + AI automation.";
+  else if(input.includes('services')) response.textContent = "We offer web development, AI automation, and online booking tools.";
+  else if(input.includes('help') || input.includes('question')) response.textContent = "Sure! Please tell us your question, and we'll get back to you.";
+  else response.textContent = "Thank you for your message! We'll respond shortly.";
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Business Pro. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
