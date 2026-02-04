@@ -1,249 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Pro Premium</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  /* --- GLOBAL --- */
-  body {
-    font-family:'Inter', sans-serif;
-    margin:0;
-    padding:0;
-    color:#333;
-    background:#f9f9f9;
-  }
-  a { text-decoration:none; color:inherit; }
-  .container { max-width:1200px; width:90%; margin:auto; }
-
-  /* --- HEADER --- */
-  header {
-    position: fixed;
-    width: 100%;
-    top:0;
-    left:0;
-    background: rgba(29,78,216,0.95);
-    color:white;
-    padding:20px 0;
-    z-index: 999;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  }
-  header .container { display:flex; justify-content:space-between; align-items:center; }
-  header h1 { font-size:2rem; margin:0; }
-  nav a { margin-left:20px; font-weight:600; color:white; transition:0.3s; }
-  nav a:hover { color:#FBBF24; }
-
-  /* --- HERO --- */
-  .hero {
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background: linear-gradient(rgba(29,78,216,0.6), rgba(29,78,216,0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    color:white;
-    padding:0 20px;
-  }
-  .hero h2 { font-size:3rem; margin-bottom:20px; text-shadow:0 2px 10px rgba(0,0,0,0.3); }
-  .hero p { font-size:1.2rem; margin-bottom:30px; text-shadow:0 1px 5px rgba(0,0,0,0.3); }
-  .hero button { padding:15px 30px; font-size:1rem; background:#FBBF24; color:#111; border:none; border-radius:8px; cursor:pointer; font-weight:700; transition:0.3s; }
-  .hero button:hover { background:#facc15; }
-
-  /* --- SECTIONS --- */
-  section { padding:100px 0; text-align:center; }
-
-  /* --- SERVICES --- */
-  .services { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-  .service-card {
-    background:white;
-    border-radius:12px;
-    padding:40px 20px;
-    width:300px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    transition:0.3s;
-  }
-  .service-card:hover { transform: translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.15); }
-  .service-card h3 { color:#1D4ED8; margin-bottom:15px; font-size:1.5rem; }
-  .service-card p { font-size:1rem; }
-
-  /* --- PRICING --- */
-  #pricing { background:#EFF6FF; }
-  .pricing { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .plan { background:white; border-radius:12px; padding:30px; width:280px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition:0.3s; display:flex; flex-direction:column; align-items:center; text-align:center; }
-  .plan:hover { transform: translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
-  .plan h4 { font-size:1.5rem; color:#1D4ED8; margin-bottom:10px; }
-  .plan span { font-size:1.8rem; font-weight:700; display:block; margin-bottom:15px; color:#111; }
-  .plan p { margin-bottom:20px; }
-  .plan .popular { background:#1D4ED8; color:white; padding:5px 10px; border-radius:8px; font-size:0.9rem; position:absolute; top:-10px; }
-  .plan button { padding:10px 20px; border:none; border-radius:8px; background:#1D4ED8; color:white; font-weight:700; cursor:pointer; transition:0.3s; }
-  .plan button:hover { background:#2563EB; }
-
-  /* --- TESTIMONIALS --- */
-  .testimonials { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .testimonial-card { background:white; border-radius:12px; padding:30px; width:280px; box-shadow:0 10px 25px rgba(0,0,0,0.1); font-style:italic; }
-  .testimonial-card h4 { margin-top:15px; color:#1D4ED8; font-weight:600; }
-
-  /* --- CONTACT --- */
-  #contact p { font-size:1.1rem; }
-
-  /* --- CHATBOX --- */
-  .chatbox { position:fixed; bottom:20px; right:20px; width:300px; background:white; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.2); padding:15px; }
-  .chatbox input { width:70%; padding:8px; border:1px solid #ccc; border-radius:5px; margin-right:5px; }
-  .chatbox button { padding:8px 10px; border:none; border-radius:5px; background:#1D4ED8; color:white; cursor:pointer; }
-  .chatbox button:hover { background:#2563EB; }
-
-  /* --- FOOTER --- */
-  footer { background:#111; color:white; padding:50px 0; text-align:center; font-size:0.9rem; }
-
-  /* --- RESPONSIVE --- */
-  @media(max-width:768px) {
-    .services, .pricing, .testimonials { flex-direction:column; align-items:center; }
-    header .container { flex-direction:column; gap:10px; }
-    .hero h2 { font-size:2rem; }
-  }
-</style>
-</head>
-<body>
-<div class="container">
-
-<!-- HEADER -->
-<header>
-  <div class="container">
-    <h1>Business Pro</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <h2>Modern Websites & AI Chatbots</h2>
-  <p>Get a premium website that attracts clients and automates your business.</p>
-  <button onclick="window.location='#pricing'">View Plans</button>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <h2>Our Premium Services</h2>
-  <div class="services">
-    <div class="service-card">
-      <h3>Web Development</h3>
-      <p>Responsive, modern websites that convert visitors into customers.</p>
-    </div>
-    <div class="service-card">
-      <h3>AI Chatbots</h3>
-      <p>Automated assistants that answer clients instantly, 24/7.</p>
-    </div>
-    <div class="service-card">
-      <h3>Booking & Payments</h3>
-      <p>Online forms and payment integration to streamline your business.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <h2>Pricing Packages</h2>
-  <div class="pricing">
-    <div class="plan">
-      <span class="popular">Best Value</span>
-      <h4>Standard</h4>
-      <span>$1,500</span>
-      <p>Website + AI Chatbot for automated client support.</p>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL_HERE">
-        <input type="hidden" name="item_name" value="Business Pro Standard Package">
-        <input type="hidden" name="amount" value="1500.00">
-        <input type="hidden" name="currency_code" value="USD">
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-    <div class="plan">
-      <h4>Basic</h4>
-      <span>$700</span>
-      <p>Website only, fully responsive and modern.</p>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL_HERE">
-        <input type="hidden" name="item_name" value="Business Pro Basic Package">
-        <input type="hidden" name="amount" value="700.00">
-        <input type="hidden" name="currency_code" value="USD">
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-    <div class="plan">
-      <h4>Premium</h4>
-      <span>$2,000</span>
-      <p>Website + AI Chatbot + Booking/Payments + Priority Support.</p>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL_HERE">
-        <input type="hidden" name="item_name" value="Business Pro Premium Package">
-        <input type="hidden" name="amount" value="2000.00">
-        <input type="hidden" name="currency_code" value="USD">
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <h2>Testimonials</h2>
-  <div class="testimonials">
-    <div class="testimonial-card">
-      <p>"This website transformed our business! Highly recommended."</p>
-      <h4>- Sarah L.</h4>
-    </div>
-    <div class="testimonial-card">
-      <p>"The AI chatbot answers client questions instantly. Amazing!"</p>
-      <h4>- Daniel K.</h4>
-    </div>
-    <div class="testimonial-card">
-      <p>"Professional design and seamless booking/payment integration."</p>
-      <h4>- Mia R.</h4>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: info@businesspro.com | Phone: 123-456-789</p>
-</section>
-
-<!-- CHATBOX -->
-<div class="chatbox">
-  <p><strong>Chat with us!</strong></p>
-  <input type="text" id="userInput" placeholder="Type a question...">
-  <button onclick="chat()">Send</button>
-  <p id="chatResponse"></p>
-</div>
-
 <script>
-function chat() {
-  const input = document.getElementById('userInput').value.toLowerCase().trim();
+// AI Chat using OpenAI API (free/demo version)
+async function chat() {
+  const input = document.getElementById('userInput').value.trim();
   const response = document.getElementById('chatResponse');
-  if(!input) { response.textContent = "Please type a question."; return; }
-  if(input.includes('price')) response.textContent = "Our packages range from $700 to $2,000.";
-  else if(input.includes('services')) response.textContent = "We offer web development, AI chatbots, and booking/payment integrations.";
-  else if(input.includes('help') || input.includes('question')) response.textContent = "Sure! Tell us your question and we'll respond quickly.";
-  else response.textContent = "Thanks for your message! We'll get back to you shortly.";
+  
+  if(!input) {
+    response.textContent = "Please type a question.";
+    return;
+  }
+
+  response.textContent = "Thinking...";
+
+  try {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{role: "user", content: input}],
+        temperature: 0.7,
+        max_tokens: 150
+      })
+    });
+
+    const data = await res.json();
+    response.textContent = data.choices[0].message.content;
+  } catch (err) {
+    response.textContent = "Sorry, something went wrong. Please try again later.";
+    console.error(err);
+  }
+
+  document.getElementById('userInput').value = "";
 }
 </script>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 Business Pro Premium. All rights reserved.</p>
-</footer>
-
-</div>
-</body>
-</html>
